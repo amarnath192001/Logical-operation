@@ -43,10 +43,43 @@ Logic gates are the basic building blocks of any digital system. It is an electr
 ![image](https://user-images.githubusercontent.com/71547910/235332254-db13d222-1246-4b57-bbb2-3ab2287ccaa8.png)
 
 ## PROGRAM:
+void setup() {
+pinMode(13, OUTPUT);
+Serial.begin(9600);
+}
+void loop() {
+if (Serial.available() > 0) {
+int state = Serial.read();
+if (state == '5') {
+digitalWrite(13, HIGH);
+Serial.println("LED ON");
+}
+if (state == '8' ) {
+digitalWrite(13, LOW);
+Serial.println("LED OFF");
+}
+}
+delay(50);
+}
+void setup() {
+Serial.begin(9600);
+}
+void loop() {
+Serial.print('H');
+delay(1000);
+Serial.print('L');
+delay(1000);
+}
+
 
 ## CIRCUIT DIAGRAM:
+![WhatsApp Image 2023-06-20 at 9 51 14 AM](https://github.com/anishkumar-Embedded/Logical-operation/assets/103507677/7d386341-52c9-4276-93fe-b825a920c6c3)
+
+
 
 ## OUTPUT:
+![WhatsApp Image 2023-06-20 at 9 51 14 AM](https://github.com/anishkumar-Embedded/Logical-operation/assets/103507677/a97a5b9d-9e9e-4c91-a2a0-9bafca58ddbb)
+
 
 ## RESULT:
 
